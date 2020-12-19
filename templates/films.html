@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki Film</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for film in films %}
         {{ film.film_name }}<br>
         {{ film.film_description }}<br>
@@ -15,5 +10,5 @@
         {{ film.actor_name }}<br>
         {{ film.director_name }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
