@@ -13,6 +13,29 @@
 </head>
 <body>
 
+    <header>
+        <!-- main nav -->
+        <nav class="nav-extended text-shadow blue-grey darken-4">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_films') }}" class="brand-logo">wikiFILM</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_films') }}">Home</a></li>
+                    <li><a href="#">Films</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- mobile nav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align blue-grey-text text-darken-4">wikiFILM</h4></li>
+            <li><a href="{{ url_for('get_films') }}">Home</a></li>
+            <li><a href="#">Films</a></li>
+            <li><a href="#">Genres</a></li>
+        </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
