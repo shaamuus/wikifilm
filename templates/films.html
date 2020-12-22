@@ -11,4 +11,18 @@
         {{ film.director_name }}<br>
     {% endfor %}
 
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="/black background.jpg" height="100" width="100">
+        </div>
+        <div class="card-content blue-grey darken-1">
+            <span class="card-title activator white-text text-shadow">Film Title<i
+                    class="fas fa-caret-down right"></i></span>
+        </div>
+        <div class="card-reveal blue-grey lighten-4">
+            <span class="card-title grey-text text-darken-4">Film Title<i class="fas fa-times right"></i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
+
 {% endblock %}
