@@ -1,27 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for film in films %}
-        {{ film.film_name }}<br>
-        {{ film.film_description }}<br>
-        {{ film.genre_name }}<br>
-        {{ film.release_date }}<br>
-        {{ film.age_restriction }}<br>
-        {{ film.actor_name }}<br>
-        {{ film.director_name }}<br>
-    {% endfor %}
-
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="/black background.jpg" height="100" width="100">
-        </div>
-        <div class="card-content blue-grey darken-1">
-            <span class="card-title activator white-text text-shadow">Film Title<i
-                    class="fas fa-caret-down right"></i></span>
-        </div>
-        <div class="card-reveal blue-grey lighten-4">
-            <span class="card-title grey-text text-darken-4">Film Title<i class="fas fa-times right"></i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    <div class="col-8 of">
+        <div class="row">
+            <div class="card sticky-action">
+                {% for film in films %}
+                <div class="card-image img waves-effect waves-block waves-light">
+                    <img class="activator" src="" alt="">
+                </div>
+                <div class="card-content blue-grey darken-1">
+                    <span class="card-title activator white-text text-shadow">
+                        {{ film.film_name }} <h6>( {{ film.release_date }} )</h6><i
+                            class="fas fa-caret-down right"></i></span>
+                </div>
+                <div class="card-reveal blue-grey lighten-4">
+                    <span class="card-title grey-text text-darken-4">{{ film.film_name }}<i
+                            class="fas fa-times right"></i></span>
+                    <p>{{ film.film_description }}</p>
+                    <p>{{ film.genre_name }}</p>
+                    <p>{{ film.age_restriction }}</p>
+                    <p>{{ film.actor_name }}</p>
+                    <p>{{ film.director_name }}</p>
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

@@ -5,3 +5,8 @@
 .flashes h4 {
     line-height: 3;
 }
+
+.card span h6 {
+    display: inline;
+    font-style: italic;
+}
