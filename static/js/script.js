@@ -1,5 +1,6 @@
  $(document).ready(function(){
     $(".sidenav").sidenav({edge: "right"});
+    $('select').formSelect();
     $('.datepicker').datepicker({
         format: "yyyy",
         minDate: 01-01-1900,
