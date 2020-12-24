@@ -24,8 +24,23 @@ def get_films():
     return render_template("films.html", films=films)
 
 
-@app.route("/add_film")
+@app.route("/add_film", methods=["GET", "POST"])
 def add_film():
+    if request.method == "POST":
+        film = {
+            "film_name": request.form.get("film_name"),
+            "film_description": request.form.get("film_description"),
+            "genre_name": request.form.get("genre_name"),
+            "release_date": request.form.get("release_date"),
+            "age_restriction": request.form.get("age_restriction"),
+            "actor_name": request.form.get("actor_name"),
+            "director_name": request.form.get("director_name"),
+            "secret_pin": "1234",
+        }
+        mongo.db.films.insert_one(film)
+        flash("New Film Added Succesfully")
+        return redirect(url_for("get_films"))
+        
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_film.html", genres=genres)
 
